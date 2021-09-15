@@ -1,11 +1,224 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+:root {
+    --font: 'Spartan',
+    sans-serif;
+    --font-size: 62.5%;
+    --dark-purple: hsl(300, 43%, 22%);
+    --status-color: hsl(333, 80%, 67%);
+    --description-color: hsl(303, 10%, 53%);
+    --review-background: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
 *{
-
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
 }
 html{
-
+    font-size:  var(--font-size);
 }
 body{
-    /* font-family: 'Spartan',
-    sans-serif; */
+    font-family: var(--font);
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color:var(--white);
+    background-image: url("images/bg-pattern-top-desktop.svg"), url("images/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat, no-repeat;
+    /* see others code >> */
+      background-position: top 0 left 0, bottom 0  right 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+.container{
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; */
+  /* padding: 8rem; */
+  max-width: 70vw;
+  max-height: 60vh;
+}
+.top{
+    display: flex;
+    /* margin: 5rem; */
+    justify-content: space-between;
+
+}
+.top-left{
+    /* width: 50%; */
+    /* padding-right: 4rem; */
+}
+.top-left h1{
+    color: var(--dark-purple);
+    font-size: 3.5rem;
+    margin-right: 5vw;
+}
+.top-left .description {
+    color: var(--description-color);
+    line-height: 2.5rem;
+    padding: 3.5rem 8rem  5rem 0;
+    font-size: 1.5rem;
+
+}
+
+.top-right{
+/* width: 50%; */
+    align-self: center;
+    margin-top: -1.5rem;
+}
+.rate{
+    display: flex;
+    background: var(--review-background) ;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: .5rem;
+    display: bolck;
+    width: 30vw;
+}
+.rate:nth-child(2){
+    margin-left: 4vw;
+}
+.rate:nth-child(3) {
+    margin-left: 8vw;
+}
+.rate .star{
+    padding: 0 2rem;
+}
+.rate .review{
+    color: var(--dark-purple);
+    align-self: center;
+    font-weight: bold;
+    padding-left: 1.5rem;
+}
+
+.bottom{
+    display: flex;
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: space-between;
+}
+.card{
+     background: var(--dark-purple);
+     padding: 2.5rem;
+     border-radius: 1rem;
+     margin-right: 2rem;
+     min-height: 25vh;
+     min-width: 15vw;
+}
+
+.card:nth-child(2) {
+    margin-top: 3rem;
+}
+.card:nth-child(3){
+    margin-top: 6rem;
+}
+.card-header{
+    display: flex;
+    padding-bottom: 2rem;
+
+}
+.card-header-left{}
+.card-header-left img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+.card-header-right{
+    align-self: center;
+    padding-left: 1.5rem;
+}
+.card-header-right .name {
+    color: var(--white);
+    padding-bottom: .5rem;
+}
+.card-header-right .status {
+    color: var(--status-color);
+}
+.card-description{
+    color: var(--review-background);
+    line-height: 1.5rem;
+}
+@media only screen and (max-width: 650px) {
+    body {
+         background-image: url("images/bg-pattern-top-mobile.svg"),
+         url("images/bg-pattern-bottom-mobile.svg");
+          background-position: top 0 left 0,
+          bottom 0 right 0;
+       
+    }
+    .top{
+        flex-direction: column;
+    }
+    .top-left h1 {
+       font-size: 2.5rem;
+        margin-right: 0;
+        text-align: center;
+    }
+    .top-left .description {
+        line-height: 2rem;
+        padding: 2rem 0 5rem 0;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .rate {
+        padding: 2rem;
+        margin: 2rem 0;
+        border-radius: .5rem;
+        width: 75vw;
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .rate:nth-child(2) {
+        margin-left: 0;
+    }
+
+    .rate:nth-child(3) {
+        margin-left: 0;
+    }
+
+    .rate .star {
+        padding: 0 2rem;
+    }
+
+    .rate .review {
+        padding-left: 2rem;
+    }
+
+    .bottom {
+        flex-direction: column;
+    }
+    
+    .card {
+        min-height: 25vh;
+        min-width: 75vw;
+        margin-bottom:2rem;
+        margin-left: 2rem;
+    }
+
+    .card:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .card:nth-child(3) {
+        margin-top: 0;
+    }
+
+}
+
+@media only screen and (max-width: 475px) {
+    body {
+        background-image: url("images/bg-pattern-top-mobile.svg"),
+            url("images/bg-pattern-bottom-mobile.svg");
+        background-position: top 0 left 0,
+            bottom 0 right 0;
+    }
+    .rate{
+        flex-direction: column;
+        align-items: center;
+    }
+      .rate .review {
+          padding: 1rem;
+      }
 }
